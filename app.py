@@ -23,8 +23,9 @@ if not st.session_state.logged_in:
     if choice == "Login":
         if st.button("Login"):
             if login_user(username, password):
-                st.session_state.logged_in = True
-                st.success("Logged in successfully!")
+    st.session_state.logged_in = True
+    st.session_state.username = username  # Store username
+    st.success("Logged in successfully!")
             else:
                 st.error("Invalid username or password.")
     else:
